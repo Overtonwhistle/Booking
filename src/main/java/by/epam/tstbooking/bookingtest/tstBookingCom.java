@@ -22,64 +22,6 @@ public class tstBookingCom {
 	private WebDriver driver = null;
 	private StringBuffer verificationErrors = new StringBuffer();
 
-	@DataProvider
-	public Object[][] city() {
-		HashMap<String, String> row1InfoMap = new HashMap<String, String>();
-		row1InfoMap.put("id column", "u_id");
-		row1InfoMap.put("id type", "int(11)");
-		row1InfoMap.put("id value", "1");
-
-		row1InfoMap.put("login column", "u_login");
-		row1InfoMap.put("login type", "varchar(255)");
-		row1InfoMap.put("login value", "user1");
-
-		row1InfoMap.put("password column", "u_password");
-		row1InfoMap.put("password type", "char(40)");
-		row1InfoMap.put("password value", "e38ad214943daad1d64c102faec29de4afe9da3d");
-
-		row1InfoMap.put("email column", "u_email");
-		row1InfoMap.put("email type", "varchar(255)");
-		row1InfoMap.put("email value", "user1@mail.com");
-
-		row1InfoMap.put("name column", "u_name");
-		row1InfoMap.put("name type", "varchar(255)");
-		row1InfoMap.put("name value", "Pupkin");
-
-		row1InfoMap.put("remember column", "u_remember");
-		row1InfoMap.put("remember type", "char(40)");
-		row1InfoMap.put("remember value", "");
-
-		HashMap<String, String> row2InfoMap = new HashMap<String, String>();
-		row2InfoMap.put("id column", "u_id");
-		row2InfoMap.put("id type", "int(11)");
-		row2InfoMap.put("id value", "2");
-
-		row2InfoMap.put("login column", "u_login");
-		row2InfoMap.put("login type", "varchar(255)");
-		row2InfoMap.put("login value", "user2");
-
-		row2InfoMap.put("password column", "u_password");
-		row2InfoMap.put("password type", "char(40)");
-		row2InfoMap.put("password value", "2aa60a8ff7fcd473d321e0146afd9e26df39514");
-
-		row2InfoMap.put("email column", "u_email");
-		row2InfoMap.put("email type", "varchar(255)");
-		row2InfoMap.put("email value", "user2@mail.com");
-
-		row2InfoMap.put("name column", "u_name");
-		row2InfoMap.put("name type", "varchar(255)");
-		row2InfoMap.put("name value", "Smith");
-
-		row2InfoMap.put("remember column", "u_remember");
-		row2InfoMap.put("remember type", "char(40)");
-		row2InfoMap.put("remember value", "");
-
-		String dbName = "auth";
-		String tableName = "users";
-		return new Object[][] { { row1InfoMap, dbName, tableName },
-				{ row2InfoMap, dbName, tableName }, };
-	}
-
 	@BeforeClass(alwaysRun = true)
 	public void setUp() throws Exception {
 
@@ -243,7 +185,7 @@ public class tstBookingCom {
 		asert.assertAll();
 	}
 
-	@Test(enabled = true, priority = 1)
+	@Test(enabled = true, priority = 7)
 	public void ConcreteResultTest() {
 		driver.get(baseUrl);
 		MainPageObject page = new MainPageObject(driver);
